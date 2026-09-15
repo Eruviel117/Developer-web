@@ -53,3 +53,24 @@ body {
     width: 120rem;
     margin: 0 auto;
 }
+
+.hero {
+    background-image: url(https://i.pinimg.com/736x/02/5f/66/025f66da73a40e1af2224d7d579152a3.jpg); /* ../ regresa un nivel porque IMG está afuera de CSS */
+    background-repeat: no-repeat; /* evita que la imagen se repita si es pequeña */
+    background-size: cover; /* cubre todo el ancho del elemento */
+    height: 450px; /* alto del banner */
+    position: relative; /* el padre siempre debe ser relative */
+}
+
+.contenido-hero {
+    position: absolute; /* el hijo siempre debe ser absolute */
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    /* alinear vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+}
