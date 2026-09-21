@@ -1,76 +1,144 @@
-/* Trucos para uniformidad en textos entre navegador   */
-:root{
-    --blanco: #fff;
-    --oscuro: #212121;
-    --primario: #ffc107;
-    --secundario: #26939f;
-    --gris: #757575;
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #26939f;
+  --gris: #757575;
+  --grisClaro: #b6b6b6;
 }
-html{
-    font-size: 62.5%;
+ 
+/* Truco para uniformidad de texto entre navegadores */
+html {
+  font-size: 62.5%;
 }
 body {
-    font-size: 16px;
-    margin: 0;
+  font-size: 16px;
+  font-family: Krub, sans-serif;
+  background-image: linear-gradient (to top, var(--oscuro) 0%, var(--secundario) 100%);
 }
-
-.my-title{
-    font-size: 3.8rem;
-    text-align: center;
+ 
+/*Tipografía*/
+ 
+h1 {
+  font-size: 3.8rem;
 }
-
-.my-title span{
-    font-size: 2rem;
-    color: #f9a826;
+ 
+h2 {
+  font-size: 2.8rem;
 }
-
+ 
+h3 {
+  font-size: 1.8rem;
+}
+ 
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+ 
+.my-title span {
+  font-size: 2rem;
+}
+ 
+.navegacion-principal {
+  /* Margin es por fuera y padding es por dentro */
+  display: flex; /* Flexbox está diseñado para alinear elementos en tus diseños */
+  /* justify-content para FILAS / align-items es para COLUMNAS (flex-direction)*/
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 2rem;
+  align-items: center;
+}
+ 
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
+}
+ 
+/* Al poner el cursor en el hipervínculo*/
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+ 
+.navegacion-principal a {
+  color: var(--blanco);
+  text-decoration: none; /* Remueve el estilo subrayado en el texto */
+  padding: 1rem;
+}
+ 
+.contenedor {
+  max-width: 120rem; /* 1200 pixeles porque 1 rem= 10px */
+  margin: 0 auto;
+}
+ 
 .nav-bg {
-    background-color: var(--secundario);
+  background-color: var(--secundario);
 }
-
-.navegacion-principal{
-    background-color: var(--secundario);
-    display: flex;
-    justify-content: space-around;
-    font-weight: bold; /* Negrita */
-    font-size: 2rem;
-}
-
-/* Efecto hover en los enlaces de navegación principal */
-.navegacion-principal a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
-}
-.navegacion-principal a{
-    text-decoration: none;
-    color: var(--blanco);
-    padding: 1rem;
-    background-color: var(--secundario);
-    
-}
-
-.contenedor{
-    width: 120rem;
-    margin: 0 auto;
-}
-
+ 
 .hero {
-    background-image: url(https://i.pinimg.com/736x/02/5f/66/025f66da73a40e1af2224d7d579152a3.jpg); /* ../ regresa un nivel porque IMG está afuera de CSS */
-    background-repeat: no-repeat; /* evita que la imagen se repita si es pequeña */
-    background-size: cover; /* cubre todo el ancho del elemento */
-    height: 450px; /* alto del banner */
-    position: relative; /* el padre siempre debe ser relative */
+  background-image: url(https://i.pinimg.com/1200x/32/be/57/32be5713ce12fae4c80c028d75710129.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+}
+ 
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.contenido-hero p,
+.contenido-hero h2 {
+  color: var(--blanco);
 }
 
-.contenido-hero {
-    position: absolute; /* el hijo siempre debe ser absolute */
-    background-color: rgba(0, 0, 0, .7);
-    width: 100%;
-    height: 100%;
-    /* alinear vertical y horizontalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--blanco);
+.contenido-hero h2 {
+  margin-bottom: 1rem;
+}
+ 
+.ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ubicacion svg {
+  width: 18px;
+  height: 18px;
+}
+
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  text-transform: uppercase; /* Convertir el texto en mayúsculas */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+}
+
+.boton:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+ 
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
 }
