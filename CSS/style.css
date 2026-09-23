@@ -130,15 +130,82 @@ h3 {
   border-radius: 0.5rem;
   width: 90%;
   text-align: center;
+  border: none;
 }
 
 .boton:hover {
   background-color: var(--primario);
   color: var(--oscuro);
 }
- 
+
 @media (min-width: 768px) {
   .boton {
     width: auto;
   }
+}
+
+/* Servicios */
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-columns: 33.33% 33.33% 33.33%; */
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  fount-weight: bold;
+  
+}
+
+.servicio p {
+  /*interlineado  */
+  line-height: 2;
+  text-align: center;
+
+}
+
+.servicio .iconos {
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+/* Contacto  */
+
+.boton:hover {
+  cursor: pointer;
+  
+}
+.formulario {
+  background-color: var(--oscuro);
+  width: min(50rem, 90%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--blanco);
+}
+
+.formulario fieldset {
+  border: none;
+  margin: 2rem 0;
 }
